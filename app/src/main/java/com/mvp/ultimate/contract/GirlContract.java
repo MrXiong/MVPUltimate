@@ -20,7 +20,5 @@ public interface GirlContract {
 
     interface Presenter extends BasePresenter<View> {
         void getGirlData();
-
-        void getMoreGirlData();
     }
 }

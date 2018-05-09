@@ -5,6 +5,8 @@ import com.mvp.ultimate.base.IApplication;
 import com.mvp.ultimate.di.module.AppModule;
 import com.mvp.ultimate.di.module.HttpModule;
 import com.mvp.ultimate.http.RetrofitHelper;
+import com.mvp.ultimate.http.RetrofitHelpers;
+import com.mvp.ultimate.model.DataManager;
 
 import javax.inject.Singleton;
 
@@ -19,7 +21,13 @@ import dagger.Component;
 public interface AppComponent {
 
     IApplication getContext();  // 提供App的Context
-    RetrofitHelper retrofitHelper();  //提供http的帮助类
 
+    DataManager getDataManager(); //数据中心
+
+    RetrofitHelper retrofitHelper();  //提供http的帮助类
+    String  name();
+    int age();
+
+    RetrofitHelpers retrofitHelpers();
 
 }

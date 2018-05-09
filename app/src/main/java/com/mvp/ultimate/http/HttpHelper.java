@@ -6,6 +6,8 @@ import com.mvp.ultimate.model.bean.GankItemBean;
 
 import java.util.List;
 
+import retrofit2.Call;
+
 
 /**
  * @author: Est <codeest.dev@gmail.com>
@@ -16,10 +18,10 @@ import java.util.List;
 public interface HttpHelper {
 
 
-    GankHttpResponse<List<GankItemBean>> fetchTechList(String tech, int num, int page);
+    Call<GankHttpResponse<List<GankItemBean>>> fetchTechList(String tech, int num, int page);
 
-    GankHttpResponse<List<GankItemBean>> fetchGirlList(int num, int page);
+    Call<GankHttpResponse<List<GankItemBean>>> fetchGirlList(int num, int page);
 
-    GankHttpResponse<List<GankItemBean>> fetchRandomGirl(int num);
+    Call<GankHttpResponse<List<GankItemBean>>> fetchRandomGirl(int num);
 
 }

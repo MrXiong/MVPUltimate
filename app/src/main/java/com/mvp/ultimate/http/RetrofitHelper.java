@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import retrofit2.Call;
+
 
 /**
  * Created by codeest on 2016/8/3.
@@ -23,17 +25,17 @@ public class RetrofitHelper implements HttpHelper {
     }
 
     @Override
-    public GankHttpResponse<List<GankItemBean>> fetchTechList(String tech, int num, int page) {
+    public Call<GankHttpResponse<List<GankItemBean>>> fetchTechList(String tech, int num, int page) {
         return mGankApiService.getTechList(tech, num, page);
     }
 
     @Override
-    public GankHttpResponse<List<GankItemBean>> fetchGirlList(int num, int page) {
+    public Call<GankHttpResponse<List<GankItemBean>>> fetchGirlList(int num, int page) {
         return mGankApiService.getGirlList(num, page);
     }
 
     @Override
-    public GankHttpResponse<List<GankItemBean>> fetchRandomGirl(int num) {
+    public Call<GankHttpResponse<List<GankItemBean>>> fetchRandomGirl(int num) {
         return mGankApiService.getRandomGirl(num);
     }
 
